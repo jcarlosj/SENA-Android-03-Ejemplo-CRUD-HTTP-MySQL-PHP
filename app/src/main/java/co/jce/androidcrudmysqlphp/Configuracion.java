@@ -16,6 +16,7 @@ public class Configuracion {
     public static final String C_ID        = "id_empleado";
     public static final String C_NOMBRES   = "nombres";
     public static final String C_APELLIDOS = "apellidos";
+    public static final String C_CEDULA    = "cedula";
     public static final String C_CARGO     = "cargo";
     public static final String C_CORREO    = "correo";
 
