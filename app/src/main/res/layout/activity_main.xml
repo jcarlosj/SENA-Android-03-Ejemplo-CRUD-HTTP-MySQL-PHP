@@ -64,12 +64,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/agregar"
-        android:id="@+id/buttonAdd" />
+        android:id="@+id/btnAgregar" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/mostrar"
-        android:id="@+id/buttonView" />
+        android:id="@+id/btnMostrar" />
 
 </LinearLayout>
