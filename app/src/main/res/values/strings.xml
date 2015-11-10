@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">"Android CRUD MySQL/PHP "</string>
+    <string name="apellidos">Apellidos del empleado</string>
+    <string name="agregar">Agregar</string>
+    <string name="cargo">Cargo</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="mostrar">Mostrar</string>
+    <string name="nombres">Nombres del empleado</string>
+    <string name="numero_cedula">Número de cédula</string>
 </resources>
