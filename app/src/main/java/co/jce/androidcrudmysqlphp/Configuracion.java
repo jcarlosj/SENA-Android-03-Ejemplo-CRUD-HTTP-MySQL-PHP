@@ -6,11 +6,11 @@ package co.jce.androidcrudmysqlphp;
 public class Configuracion {
 
     //-> Enlaces de los scripts
-    public static final String URL_AGREGAR_EMPLEADO    = "http://localhost/simplefieldcoding/empleados/insertar.php";
-    public static final String URL_MOSTRAR_EMPLEADOS   = "http://localhost/simplefieldcoding/empleados/listar_empleados.php";
-    public static final String URL_MOSTRAR_EMPLEADO    = "http://localhost/simplefieldcoding/empleados/empleado.php?id=";
-    public static final String URL_ACTUALIZAR_EMPLEADO = "http://localhost/simplefieldcoding/empleados/editar.php";
-    public static final String URL_ELIMINAR_EMPLEADO   = "http://localhost/simplefieldcoding/empleados/eliminar.php?id=";
+    public static final String URL_AGREGAR_EMPLEADO    = "http://192.168.0.17/simplefieldcoding/empleados/insertar.php"; //: http://android-testing.webcindario.com/empleados/insertar.php
+    public static final String URL_MOSTRAR_EMPLEADOS   = "http://192.168.0.17/simplefieldcoding/empleados/listar_empleados.php";
+    public static final String URL_MOSTRAR_EMPLEADO    = "http://192.168.0.17/simplefieldcoding/empleados/empleado.php?id=";
+    public static final String URL_ACTUALIZAR_EMPLEADO = "http://192.168.0.17/simplefieldcoding/empleados/editar.php";
+    public static final String URL_ELIMINAR_EMPLEADO   = "http://192.168.0.17/simplefieldcoding/empleados/eliminar.php?id=";
 
     //-> Campos que serán usados en las solicitudes (campos de la tabla).
     public static final String C_ID        = "id_empleado";

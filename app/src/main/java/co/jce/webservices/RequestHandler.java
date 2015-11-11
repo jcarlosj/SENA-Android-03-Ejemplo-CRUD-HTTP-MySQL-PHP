@@ -1,4 +1,6 @@
-package co.jce.manejadorpeticiones;
+package co.jce.webservices;
+
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -48,10 +50,12 @@ public class RequestHandler {
             BufferedWriter writer = new BufferedWriter( new OutputStreamWriter(os, "UTF-8") );
             writer.write(getPostDataString(postDataParams));    //: Utiliza getPostDataString para crear
                                                                 //: cadena de valores para la petición
+            Log .i("URL: ", getPostDataString(postDataParams));
 
             writer.flush();
             writer.close();
             os.close();
+
             int responseCode = conn.getResponseCode();
 
             if (responseCode == HttpsURLConnection.HTTP_OK) {
@@ -108,10 +112,11 @@ public class RequestHandler {
     }
 
     /*-> Método para generar cadena de valores para peticiones HTTP vía POST
-*    Parametros( HashMap valores enviados ) */
+    *    Parametros( HashMap valores enviados ) */
     private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();
         boolean first = true;
+
         for (Map.Entry<String, String> entry : params.entrySet()) {
             if (first)
                 first = false;
