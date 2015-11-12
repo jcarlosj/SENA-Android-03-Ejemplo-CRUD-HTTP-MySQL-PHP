@@ -18,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Agrega los Activities que harán parte de la aplicación -->
+        <activity android:name=".ListarEmpleadosActivity"
+            android:label="@string/listar_empleados" />
     </application>
 
 </manifest>

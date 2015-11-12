@@ -1,6 +1,6 @@
 package co.jce.androidcrudmysqlphp;
 
-import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMostrar = ( Button ) findViewById( R .id .btnMostrar );
 
         //-> Agregamos los escuchadores a los componentes Button
-        btnAgregar .setOnClickListener( this );
-        btnMostrar .setOnClickListener( this );
+        btnAgregar .setOnClickListener(this);
+        btnMostrar .setOnClickListener(this);
 
     }
 
@@ -60,10 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         obtenerValores();
 
-        ProgressDialog loading;
         String salida = null;
         //-> Ejecuto mi Tarea Asincrona GetString y le paso el parámetro
-        AgregarEmpleado cadena = (AgregarEmpleado) new AgregarEmpleado( this ) .execute( vNombres, vApellidos, vCedula, vCargo, vCorreo );
+        AgregarEmpleado cadena = (AgregarEmpleado) new AgregarEmpleado( this ) .execute(vNombres, vApellidos, vCedula, vCargo, vCorreo);
 
         try {
             salida = cadena.get();          //: Obtengo el valor de retorno de mi tarea.
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             e.printStackTrace();
         }
 
-        Log.i( "MainActivity", "Recibe: " + salida );
+        Log.i("MainActivity", "Recibe: " + salida);
 
     }
 
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             agregarEmpleado();
         }
         if( v .getId() == R .id .btnMostrar ) {
-
+            startActivity( new Intent( this, ListarEmpleadosActivity.class  ) );
         }
     }
 }

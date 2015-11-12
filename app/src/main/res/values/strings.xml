@@ -4,6 +4,7 @@
     <string name="agregar">Agregar</string>
     <string name="cargo">Cargo</string>
     <string name="correo">Correo electrónico</string>
+    <string name="listar_empleados">Listar empleados</string>
     <string name="mostrar">Mostrar</string>
     <string name="nombres">Nombres del empleado</string>
     <string name="numero_cedula">Número de cédula</string>
