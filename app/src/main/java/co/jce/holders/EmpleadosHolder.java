@@ -14,9 +14,7 @@ public class EmpleadosHolder {
                      etCargo,
                      etCorreo;
 
-    //-> Getters & Setters
-
-
+    //-> Getters & Setters.
     public EditText getEtNombres() {
         return etNombres;
     }

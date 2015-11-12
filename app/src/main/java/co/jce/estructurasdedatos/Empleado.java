@@ -22,7 +22,7 @@ public class Empleado {
         this .vCorreo    = vCorreo;
     }
 
-    //-> Getters & Setters
+    //-> Getters & Setters.
     public int getId_empleado() {
         return id_empleado;
     }
