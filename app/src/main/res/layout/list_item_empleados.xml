@@ -18,7 +18,7 @@
             android:textSize="28dp"
             android:layout_weight="1"
             android:text="79878292"
-            android:id="@+id/etCedula" />
+            android:id="@+id/tvCedula" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -32,7 +32,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginLeft="6dp"
                 android:text="Juan Carlos"
-                android:id="@+id/etNombres" />
+                android:id="@+id/tvNombres" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,7 +40,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_marginLeft="6dp"
                 android:text="Jiménez Gutiérrez"
-                android:id="@+id/etApellidos" />
+                android:id="@+id/tvApellidos" />
         </LinearLayout>
     </LinearLayout>
 
