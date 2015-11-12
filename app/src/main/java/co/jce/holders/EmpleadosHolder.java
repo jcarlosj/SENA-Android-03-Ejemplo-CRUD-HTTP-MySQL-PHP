@@ -1,6 +1,6 @@
 package co.jce.holders;
 
-import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by jcarlosj on 12/11/15.
@@ -8,51 +8,52 @@ import android.widget.EditText;
 public class EmpleadosHolder {
 
     //-> Define los componentes
-    private EditText etNombres,
+    private TextView etNombres,
                      etApellidos,
                      etCedula,
                      etCargo,
                      etCorreo;
 
     //-> Getters & Setters.
-    public EditText getEtNombres() {
+
+    public TextView getEtNombres() {
         return etNombres;
     }
 
-    public void setEtNombres( EditText etNombres ) {
+    public void setEtNombres( TextView etNombres ) {
         this .etNombres = etNombres;
     }
 
-    public EditText getEtApellidos() {
+    public TextView getEtApellidos() {
         return etApellidos;
     }
 
-    public void setEtApellidos( EditText etApellidos ) {
+    public void setEtApellidos( TextView etApellidos ) {
         this .etApellidos = etApellidos;
     }
 
-    public EditText getEtCedula() {
+    public TextView getEtCedula() {
         return etCedula;
     }
 
-    public void setEtCedula( EditText etCedula ) {
+    public void setEtCedula( TextView etCedula ) {
         this .etCedula = etCedula;
     }
 
-    public EditText getEtCargo() {
+    public TextView getEtCargo() {
         return etCargo;
     }
 
-    public void setEtCargo( EditText etCargo ) {
+    public void setEtCargo( TextView etCargo ) {
         this .etCargo = etCargo;
     }
 
-    public EditText getEtCorreo() {
+    public TextView getEtCorreo() {
         return etCorreo;
     }
 
-    public void setEtCorreo( EditText etCorreo ) {
+    public void setEtCorreo( TextView etCorreo ) {
         this .etCorreo = etCorreo;
     }
-
+    
 }
