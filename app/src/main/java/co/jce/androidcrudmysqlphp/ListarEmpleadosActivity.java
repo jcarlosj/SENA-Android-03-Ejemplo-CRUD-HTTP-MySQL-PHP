@@ -3,7 +3,11 @@ package co.jce.androidcrudmysqlphp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -74,6 +78,14 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
         //-> Asociamos el "Adapter" con el "ListView".
         lvEmpleados .setAdapter( adaptadorEmpleados );
 
+        //-> Agregamos el escuchador al "ListView"
+        lvEmpleados .setOnItemClickListener( new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast .makeText( getApplicationContext(), "Seleccionaste " + position, Toast .LENGTH_SHORT ) .show();
+            }
+        });
+        
     }
 
 }
