@@ -40,7 +40,6 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
     private ArrayList<Empleado> mostrarEmpleados() {
 
         String salida = null;
-        String aDatos[];
 
         //-> Ejecuto mi Tarea Asincrona ListarEmpleados y le paso el parámetro
         ListarEmpleados cadena = (ListarEmpleados) new ListarEmpleados( this ) .execute();
@@ -82,10 +81,10 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
         lvEmpleados .setOnItemClickListener( new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast .makeText( getApplicationContext(), "Seleccionaste " + position, Toast .LENGTH_SHORT ) .show();
+                Toast .makeText(getApplicationContext(), "Seleccionaste a: " + alEmpleado .get( (int) id ) .getvNombres(), Toast .LENGTH_SHORT ) .show();
             }
         });
-        
+
     }
 
 }
