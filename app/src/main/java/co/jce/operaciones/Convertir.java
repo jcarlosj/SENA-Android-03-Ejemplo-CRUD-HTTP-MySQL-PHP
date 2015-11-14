@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import co.jce.estructurasdedatos.Empleado;
+
 /**
  * Created by jcarlosj on 11/11/15.
  */
@@ -55,6 +57,20 @@ public class Convertir {
         }
 
         return aDatos;
+    }
+
+    public static ArrayList<Empleado> arrayListDeArrayEnArrayListEmpleado( ArrayList<String[]> datos ) {
+
+        ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+        Empleado empleado;
+
+        Log .i( "Registros", " :" + datos.size() );
+
+        for( int i = 0; i < datos.size(); i++ ) {
+            empleados .add( new Empleado( datos.get( i )[ 1 ], datos.get( i )[ 2 ], datos.get( i )[ 3 ], datos.get( i )[ 4 ], datos.get( i )[ 5 ] ) );
+        }
+
+        return empleados;
     }
 
 }

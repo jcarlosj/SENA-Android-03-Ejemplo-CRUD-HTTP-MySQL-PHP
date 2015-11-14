@@ -55,5 +55,5 @@ public class EmpleadosHolder {
     public void setEtCorreo( TextView etCorreo ) {
         this .etCorreo = etCorreo;
     }
-    
+
 }
