@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import co.jce.androidcrudmysqlphp.Configuracion;
 import co.jce.webservices.RequestHandler;
@@ -32,7 +31,7 @@ public class ListarEmpleados extends AsyncTask<Void,Void,String> {
         super.onPostExecute(s);
         loading.dismiss();
         Log .i( "onPostExecute", "Retorna > " + s );
-        Toast.makeText( contexto, "< " + s + " >", Toast.LENGTH_LONG ).show();
+        //-(T) Toast.makeText( contexto, "< " + s + " >", Toast.LENGTH_LONG ).show();
     }
 
     @Override
