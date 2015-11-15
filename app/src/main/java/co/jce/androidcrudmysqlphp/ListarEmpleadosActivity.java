@@ -131,6 +131,7 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
                                in .putExtra( "cargo",     alEmpleado.get( posicion ) .getvCargo() );
                                in .putExtra( "correo",    alEmpleado.get( posicion ) .getvCorreo() );
                                startActivity(in);
+                               finish();
                                Toast.makeText(getApplicationContext(), "Editar.", Toast.LENGTH_LONG).show();
                            }
                            if (which == 1) {
@@ -177,6 +178,7 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
     }
 
     private void eliminarEmpleado( final String cedula ) {
+
         //-> Ejecuto mi Tarea Asincrona ListarEmpleados y le paso el parámetro
         EliminarEmpleado cadena = (EliminarEmpleado) new EliminarEmpleado( this ) .execute( cedula );
 

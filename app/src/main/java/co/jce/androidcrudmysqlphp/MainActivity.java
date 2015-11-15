@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.concurrent.ExecutionException;
 
 import co.jce.tasks.AgregarEmpleado;
+import co.jce.tasks.EditarEmpleado;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if( getIntent() .hasExtra( "cedula" ) ) {
 
             etNombres .setText( getIntent() .getStringExtra( "nombres" ) );
-            etApellidos .setText( getIntent() .getStringExtra("apellidos") );
+            etApellidos .setText( getIntent() .getStringExtra( "apellidos" ) );
             etCedula .setText( getIntent() .getStringExtra( "cedula" ) );
             etCargo .setText( getIntent() .getStringExtra( "cargo" ) );
             etCorreo .setText( getIntent() .getStringExtra( "correo" ) );
@@ -89,8 +90,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         obtenerValores();
 
         String salida = null;
-        //-> Ejecuto mi Tarea Asincrona GetString y le paso el parámetro
+        //-> Ejecuto mi Tarea Asincrona AgregarEmpleado y le paso el parámetro
         AgregarEmpleado cadena = (AgregarEmpleado) new AgregarEmpleado( this ) .execute(vNombres, vApellidos, vCedula, vCargo, vCorreo);
+
+        try {
+            salida = cadena.get();          //: Obtengo el valor de retorno de mi tarea.
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        Log.i("MainActivity", "Recibe: " + salida);
+
+    }
+
+    //-> Editar empleado
+    private void editarEmpleado() {
+
+        obtenerValores();
+
+        String salida = null;
+        //-> Ejecuto mi Tarea Asincrona EditarEmpleado y le paso el parámetro
+        EditarEmpleado cadena = (EditarEmpleado) new EditarEmpleado( this ) .execute(vNombres, vApellidos, vCedula, vCargo, vCorreo);
 
         try {
             salida = cadena.get();          //: Obtengo el valor de retorno de mi tarea.
@@ -118,7 +140,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if( v .getId() == R .id .btnAgregar ) {
             //-> Agrega funcionalidad del Botón de acuerdo a su nombre.
             if( btnAgregar .getText() .equals( getResources() .getString( R .string .editar ) ) ) {
-                Toast .makeText( getApplicationContext(), "Editaria", Toast .LENGTH_SHORT ) .show();
+                editarEmpleado();
+                startActivity( new Intent( getApplicationContext(), ListarEmpleadosActivity.class ) );
+                finish();
             }
             if ( btnAgregar .getText() .equals( getResources() .getString( R .string .agregar ) ) ) {
                 agregarEmpleado();
