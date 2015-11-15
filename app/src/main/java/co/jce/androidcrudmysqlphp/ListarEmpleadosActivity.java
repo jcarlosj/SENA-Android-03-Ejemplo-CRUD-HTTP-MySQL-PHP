@@ -36,6 +36,7 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
     private AlertDialog .Builder adbVentana;
     private Dialog dialog;
     private Bundle bundle;
+    private Intent in;
 
     //-> Define los componentes
     private ListView lvEmpleados;
@@ -103,30 +104,40 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
         lvEmpleados .setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                lanzaVentanaDeDialogo( alEmpleado.get( (int) position ) .getvCedula() );
+                lanzaVentanaDeDialogo( position );
             }
         });
 
     }
 
-    private void lanzaVentanaDeDialogo( final String cedula ) {
+    private void lanzaVentanaDeDialogo( final int posicion ) {
 
         //-> Se instancia (crea) la ventana de dialogo
         adbVentana = new AlertDialog.Builder( this );
 
         //-> Se dan características a la ventana de dialogo una vez creada.
-        adbVentana .setTitle( R .string .opciones )
-                   .setItems( R.array.opciones, new DialogInterface.OnClickListener() {
+        adbVentana .setTitle(R.string.opciones)
+                   .setItems(R.array.opciones, new DialogInterface.OnClickListener() {
                        public void onClick(DialogInterface dialog, int which) {
                            // The 'which' argument contains the index position
                            // of the selected item
-                           if( which == 0 ) {
-                               Toast .makeText( getApplicationContext(), "Editar.", Toast .LENGTH_LONG ) .show();
+                           if (which == 0) {
+                               /*-> A través de un Intent enviamos los datos al Activity donde esta el formulario.
+                                    En este caso se pretende reutilizar el MainActivity para insertar y editar   */
+                               in = new Intent(getApplicationContext(), MainActivity.class);
+                               in .putExtra( "nombres",   alEmpleado.get( posicion ) .getvNombres() );
+                               in .putExtra( "apellidos", alEmpleado.get( posicion ) .getvApellidos() );
+                               in .putExtra( "cedula",    alEmpleado.get( posicion ) .getvCedula() );
+                               in .putExtra( "cargo",     alEmpleado.get( posicion ) .getvCargo() );
+                               in .putExtra( "correo",    alEmpleado.get( posicion ) .getvCorreo() );
+                               startActivity(in);
+                               Toast.makeText(getApplicationContext(), "Editar.", Toast.LENGTH_LONG).show();
                            }
-                           if( which == 1 ) {
-                               lanzarVentanaEliminar( cedula );
+                           if (which == 1) {
+                               lanzarVentanaEliminar( alEmpleado.get( posicion ) .getvCedula() );
                            }
-                           if( which == 2 ) {}
+                           if (which == 2) {
+                           }
                        }
                    });
 
