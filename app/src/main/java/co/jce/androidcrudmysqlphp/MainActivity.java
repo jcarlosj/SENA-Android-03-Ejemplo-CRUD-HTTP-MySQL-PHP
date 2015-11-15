@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAgregar .setOnClickListener(this);
         btnMostrar .setOnClickListener(this);
 
+        //-> Agrega el nombre inicial del botón
+        btnAgregar .setText( R .string .agregar );
+
         validaExtras();
     }
 
@@ -68,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             etCedula .setText( getIntent() .getStringExtra( "cedula" ) );
             etCargo .setText( getIntent() .getStringExtra( "cargo" ) );
             etCorreo .setText( getIntent() .getStringExtra( "correo" ) );
+
+            btnAgregar .setText( R .string .editar );       //: Cambiamos el nombre del botón
 
             Toast .makeText( this, "Recibe datos", Toast .LENGTH_SHORT ) .show();
             Log .i( "Intent", "Recibe datos: " + getIntent() .toString() );
@@ -111,7 +116,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if( v .getId() == R .id .btnAgregar ) {
-            agregarEmpleado();
+            //-> Agrega funcionalidad del Botón de acuerdo a su nombre.
+            if( btnAgregar .getText() .equals( getResources() .getString( R .string .editar ) ) ) {
+                Toast .makeText( getApplicationContext(), "Editaria", Toast .LENGTH_SHORT ) .show();
+            }
+            if ( btnAgregar .getText() .equals( getResources() .getString( R .string .agregar ) ) ) {
+                agregarEmpleado();
+            }
         }
         if( v .getId() == R .id .btnMostrar ) {
             startActivity( new Intent( this, ListarEmpleadosActivity.class  ) );
