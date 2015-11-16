@@ -30,8 +30,8 @@ public class ListarEmpleados extends AsyncTask<Void,Void,String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         loading.dismiss();
-        Log .i( "onPostExecute", "Retorna > " + s );
-        //-(T) Toast.makeText( contexto, "< " + s + " >", Toast.LENGTH_LONG ).show();
+        Log .i("onPostExecute", "Retorna > " + s);
+        //-(T) Toast .makeText( contexto, "< " + s + " >", Toast.LENGTH_LONG ) .show();
     }
 
     @Override

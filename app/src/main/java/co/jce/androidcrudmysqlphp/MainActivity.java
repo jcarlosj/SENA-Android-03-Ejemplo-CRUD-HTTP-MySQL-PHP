@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
@@ -73,13 +72,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             etCargo .setText( getIntent() .getStringExtra( "cargo" ) );
             etCorreo .setText( getIntent() .getStringExtra( "correo" ) );
 
-            btnAgregar .setText( R .string .editar );       //: Cambiamos el nombre del botón
+            btnAgregar .setText(R.string.editar);       //: Cambiamos el nombre del botón
 
-            Toast .makeText( this, "Recibe datos", Toast .LENGTH_SHORT ) .show();
+            //-(T) Toast .makeText( this, "Recibe datos", Toast .LENGTH_SHORT ) .show();
             Log .i( "Intent", "Recibe datos: " + getIntent() .toString() );
         }
         else {
-            Toast .makeText( this, "No recibe datos", Toast .LENGTH_SHORT ) .show();
+            //-(T) Toast .makeText( this, "No recibe datos", Toast .LENGTH_SHORT ) .show();
             Log .i( "Intent", "NO recibe datos: " + this .getIntent() .toString() );
         }
     }
@@ -127,12 +126,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void obtenerValores() {
-        //->
+        //-> Accede a los valores de cada uno de los componentes del "Activity"
         vNombres   = etNombres .getText() .toString();
         vApellidos = etApellidos .getText() .toString();
         vCedula    = etCedula .getText() .toString();
         vCargo     = etCargo .getText() .toString();
         vCorreo    = etCorreo .getText() .toString();
+    }
+
+    private void limpiarCampos() {
+        etNombres .setText( "" );
+        etApellidos .setText( "" );
+        etCedula .setText( "" );
+        etCargo .setText( "" );
+        etCorreo .setText( "" );
     }
 
     @Override
@@ -146,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             if ( btnAgregar .getText() .equals( getResources() .getString( R .string .agregar ) ) ) {
                 agregarEmpleado();
+                limpiarCampos();
             }
         }
         if( v .getId() == R .id .btnMostrar ) {

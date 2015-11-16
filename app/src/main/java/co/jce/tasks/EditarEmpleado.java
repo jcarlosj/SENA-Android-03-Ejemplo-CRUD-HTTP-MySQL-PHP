@@ -34,7 +34,7 @@ public class EditarEmpleado extends AsyncTask<String,Void,String> {
         super.onPostExecute(s);
         loading.dismiss();
         Log .i( "onPostExecute", "Retorna > " + s );
-        Toast.makeText( contexto, "< " + s + " >", Toast.LENGTH_LONG).show();
+        Toast .makeText( contexto, "< " + s + " >", Toast .LENGTH_LONG ) .show();
     }
 
     @Override

@@ -129,10 +129,10 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
                                in .putExtra( "apellidos", alEmpleado.get( posicion ) .getvApellidos() );
                                in .putExtra( "cedula",    alEmpleado.get( posicion ) .getvCedula() );
                                in .putExtra( "cargo",     alEmpleado.get( posicion ) .getvCargo() );
-                               in .putExtra( "correo",    alEmpleado.get( posicion ) .getvCorreo() );
+                               in .putExtra("correo", alEmpleado.get(posicion).getvCorreo());
                                startActivity(in);
                                finish();
-                               Toast.makeText(getApplicationContext(), "Editar.", Toast.LENGTH_LONG).show();
+                               //-(T) Toast.makeText(getApplicationContext(), "Editar.", Toast.LENGTH_LONG).show();
                            }
                            if (which == 1) {
                                lanzarVentanaEliminar( alEmpleado.get( posicion ) .getvCedula() );
@@ -166,7 +166,7 @@ public class ListarEmpleadosActivity extends AppCompatActivity {
                 .setNeutralButton( getResources() .getString( R .string .cancelar ), new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast .makeText( getApplicationContext(), "No enviaría nada.", Toast .LENGTH_LONG ) .show();
+                        //-(T) Toast .makeText( getApplicationContext(), "No enviaría nada.", Toast .LENGTH_LONG ) .show();
                     }
 
                 });
